@@ -24,6 +24,10 @@ module Merit
       def by_level(level)
         find { |b| b.level.to_s == level.to_s }
       end
+
+      def for_group(group)
+        find { |b| b.custom_fields[:badge_group] == group.to_sym }
+      end
     end
 
     def _mongoid_sash_in(sashes)
